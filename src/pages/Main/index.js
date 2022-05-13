@@ -8,10 +8,6 @@ import {
 } from 'react-native';
 
 const Main = ({navigation}) => {
-  const SplashImage = {
-    source: require('../../assets/splash/splashscreen1.jpg'),
-  };
-
   return (
     <View style={{flex: 1, backgroundColor: '#000'}}>
       <StatusBar backgroundColor="#000" barStyle="light-content" />
