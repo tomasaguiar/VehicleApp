@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "664069694629",
+    "project_id": "urvehicle-acc4d",
+    "storage_bucket": "urvehicle-acc4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664069694629:android:179af070625cfb9252994c",
+        "android_client_info": {
+          "package_name": "com.myvehiclemobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664069694629-vttk4cgks374bbaklt9qliiucnec170u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHSOdFKavZi8Nyklcv58-ZUKhat8Zk8Hs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664069694629-vttk4cgks374bbaklt9qliiucnec170u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
