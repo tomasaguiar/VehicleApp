@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {View, Text, TextInput, StatusBar, TouchableOpacity} from 'react-native';
-
 import {CaretLeft} from 'phosphor-react-native';
 
-const SignIn = () => {
+import {AuthContext} from '../../routes/provider/AuthProvider';
+
+const SignIn = ({navigation}) => {
   const [focused, setFocused] = React.useState(false);
+  const [email, setEmail] = React.useState('');
+  const [password, setPassword] = React.useState('');
+  const [loading, setLoading] = React.useState('');
+  const {register} = useContext(AuthContext);
 
   const handleFocus = () => {
     setFocused(true);
@@ -14,11 +19,17 @@ const SignIn = () => {
     setFocused(false);
   };
 
+  function createUser() {
+    setLoading(true);
+    register(email, password);
+    setLoading(false);
+  }
+
   return (
     <View style={{flex: 1, backgroundColor: '#000'}}>
       <StatusBar backgroundColor="#000" barStyle="light-content" />
       <View style={{marginHorizontal: 38}}>
-        <View style={{marginTop: 50}}>
+        <View style={{marginTop: 30}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <TouchableOpacity>
               <CaretLeft size={24} color="#fff" />
@@ -51,6 +62,8 @@ const SignIn = () => {
               placeholderTextColor="#a8a8a8"
               onFocus={handleFocus}
               onBlur={handleBlur}
+              value={email}
+              onChangeText={text => setEmail(text)}
             />
             <TextInput
               style={{
@@ -67,9 +80,12 @@ const SignIn = () => {
               placeholderTextColor="#a8a8a8"
               onFocus={handleFocus}
               onBlur={handleBlur}
+              value={password}
+              onChangeText={text => setPassword(text)}
             />
             <View style={{marginTop: 25}}>
               <TouchableOpacity
+                onPress={() => register(email, password)}
                 style={{
                   borderRadius: 10,
                   width: '100%',
@@ -88,6 +104,7 @@ const SignIn = () => {
                   marginTop: 10,
                 }}>
                 <TouchableOpacity
+                  onPress={() => navigation.navigate('signin')}
                   style={{
                     alignItems: 'center',
                     justifyContent: 'center',
