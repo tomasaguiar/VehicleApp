@@ -1,5 +1,7 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
+
+import {CaretLeft} from 'phosphor-react-native';
 
 const Settings = ({navigation}) => {
   return (
@@ -10,11 +12,23 @@ const Settings = ({navigation}) => {
             marginTop: 22,
             flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'space-between',
           }}>
-          <Text style={{fontSize: 20}}>Settings</Text>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.goBack();
+            }}>
+            <CaretLeft color="#999999" />
+          </TouchableOpacity>
+          <Text style={{fontSize: 20, marginLeft: 10}}>Settings</Text>
         </View>
-        <View></View>
+        <View
+          style={{
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 20,
+          }}>
+          <Text>UrVehicle v.0.0.1 Pre Alpha</Text>
+        </View>
       </View>
     </View>
   );
