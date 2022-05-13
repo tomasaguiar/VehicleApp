@@ -1,7 +1,13 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StatusBar, Image} from 'react-native';
 
-import {UserCircle, CaretRight, Wrench, Spinner} from 'phosphor-react-native';
+import {
+  UserCircle,
+  CaretRight,
+  Wrench,
+  Spinner,
+  Plus,
+} from 'phosphor-react-native';
 
 import {AuthContext} from '../../routes/provider/AuthProvider';
 import firestore from '@react-native-firebase/firestore';
@@ -11,6 +17,7 @@ const Dashboard = ({navigation}) => {
   const [userData, setUserData] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const [imageExists, setImageExists] = React.useState(false);
+  const [CarNotConfigured, setCarNotConfigured] = React.useState(false);
 
   const getUserData = () => {
     firestore()
@@ -30,11 +37,15 @@ const Dashboard = ({navigation}) => {
     } else {
       setImageExists(true);
     }
+    if (userData.userImg === '') {
+      setCarNotConfigured(true);
+    } else {
+      setCarNotConfigured(false);
+    }
   };
 
   React.useEffect(() => {
     getUserData();
-    console.log('userData', imageExists);
   }, []);
 
   return (
@@ -67,8 +78,41 @@ const Dashboard = ({navigation}) => {
           style={{
             marginTop: 20,
             width: '100%',
-            height: 350,
-          }}></View>
+            height: 250,
+            justifyContent: 'center',
+          }}>
+          {CarNotConfigured ? (
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <TouchableOpacity>
+                <View
+                  style={{
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <Plus size={50} weight="bold" color="#999999" />
+                  <Text style={{fontSize: 18, marginTop: 20}}>
+                    Add a vehicle
+                  </Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          ) : (
+            <View
+              style={{
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}>
+              <Image
+                style={{width: '100%', height: 220}}
+                source={require('../../assets/images/car.png')}
+              />
+            </View>
+          )}
+        </View>
         <View
           style={{
             marginTop: 20,
