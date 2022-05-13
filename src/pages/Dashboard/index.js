@@ -65,10 +65,11 @@ const Dashboard = ({navigation}) => {
               navigation.navigate('Settings');
             }}>
             {imageExists ? (
-              <Image
-                style={{width: 35, height: 35, borderRadius: 25}}
-                source={{uri: userData.userImg}}
-              />
+              // <Image
+              //   style={{width: 35, height: 35, borderRadius: 25}}
+              //   source={{uri: userData.userImg}}
+              // />
+              <UserCircle size={35} color={'#252525'} weight="fill" />
             ) : (
               <UserCircle size={35} color={'#252525'} weight="fill" />
             )}
@@ -113,11 +114,17 @@ const Dashboard = ({navigation}) => {
             </View>
           )}
         </View>
+        <View style={{width: '100%', height: 1, backgroundColor: '#252525'}}>
+          <Text></Text>
+        </View>
         <View
           style={{
             marginTop: 20,
           }}>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Services');
+            }}>
             <View
               style={{
                 width: '100%',
@@ -137,7 +144,10 @@ const Dashboard = ({navigation}) => {
               </View>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('Active');
+            }}>
             <View
               style={{
                 width: '100%',
