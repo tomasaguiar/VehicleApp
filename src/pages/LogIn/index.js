@@ -25,7 +25,10 @@ const LogIn = ({navigation}) => {
       <View style={{marginHorizontal: 38}}>
         <View style={{marginTop: 30}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}>
               <CaretLeft size={24} color="#fff" />
             </TouchableOpacity>
             <Text

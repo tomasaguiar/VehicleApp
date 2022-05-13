@@ -31,7 +31,10 @@ const SignIn = ({navigation}) => {
       <View style={{marginHorizontal: 38}}>
         <View style={{marginTop: 30}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                navigation.goBack();
+              }}>
               <CaretLeft size={24} color="#fff" />
             </TouchableOpacity>
             <Text
@@ -104,7 +107,7 @@ const SignIn = ({navigation}) => {
                   marginTop: 10,
                 }}>
                 <TouchableOpacity
-                  onPress={() => navigation.navigate('signin')}
+                  onPress={() => navigation.navigate('login')}
                   style={{
                     alignItems: 'center',
                     justifyContent: 'center',
