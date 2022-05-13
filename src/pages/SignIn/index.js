@@ -85,6 +85,7 @@ const SignIn = ({navigation}) => {
               onBlur={handleBlur}
               value={password}
               onChangeText={text => setPassword(text)}
+              secureTextEntry={true}
             />
             <View style={{marginTop: 25}}>
               <TouchableOpacity
