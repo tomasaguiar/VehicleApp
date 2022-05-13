@@ -4,6 +4,8 @@ import React from 'react';
 import Routes from './routes/routes';
 import {NavigationContainer} from '@react-navigation/native';
 
+import {AuthProvider} from './routes/provider/AuthProvider';
+
 import {
   setCustomTextInput,
   setCustomText,
@@ -22,9 +24,9 @@ const App = () => {
   setCustomTouchableOpacity(customTextProps);
 
   return (
-    <NavigationContainer>
+    <AuthProvider>
       <Routes />
-    </NavigationContainer>
+    </AuthProvider>
   );
 };
 
