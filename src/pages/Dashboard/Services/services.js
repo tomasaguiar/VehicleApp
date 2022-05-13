@@ -51,20 +51,27 @@ const ServicesDashboard = ({navigation}) => {
             }}>
             <CaretLeft color="#999999" />
           </TouchableOpacity>
-          <Text style={{fontSize: 20, marginLeft: 10}}>Add a service</Text>
+          <Text style={{fontSize: 20, marginLeft: 10}}>Adicionar Serviço</Text>
         </View>
         <View>
           <View
             style={{
               width: '100%',
-              height: 90,
+              height: 120,
               backgroundColor: '#303030',
               borderRadius: 5,
               marginTop: 20,
               alignItems: 'center',
               justifyContent: 'center',
             }}>
-            <Text>How this work?</Text>
+            <View style={{margin: 10}}>
+              <Text>
+                Escolhe o serviço que pretendes adicionar, será criado um evento
+                no calendário para te relembrar de quando precisaras de efetuar
+                novamente a troca. Também será adicionado na aba "Serviços
+                Ativos".
+              </Text>
+            </View>
           </View>
           <View>
             <FlatList
