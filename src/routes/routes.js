@@ -3,7 +3,6 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import {AuthContext} from './provider/AuthProvider';
 import auth from '@react-native-firebase/auth';
-import firestore from '@react-native-firebase/firestore';
 
 import AuthRoutes from '../routes/auth_routes';
 import AppRoutes from '../routes/app_routes';

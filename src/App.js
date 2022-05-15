@@ -3,7 +3,6 @@ import React from 'react';
 
 import Routes from './routes/routes';
 import {AuthProvider} from './routes/provider/AuthProvider';
-import RNCalendarEvents from 'react-native-calendar-events';
 
 import {
   setCustomTextInput,

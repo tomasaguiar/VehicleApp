@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Alert} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import {DotsThree} from 'phosphor-react-native';
 
 const ActiveServiceComponent = ({item}) => {
