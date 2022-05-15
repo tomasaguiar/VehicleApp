@@ -8,11 +8,18 @@ import {Plus} from 'phosphor-react-native';
 import {AuthContext} from '../../routes/provider/AuthProvider';
 
 const ServiceComponent = ({item, navigation}) => {
+  const [days, setDays] = React.useState(0);
   const {user} = React.useContext(AuthContext);
   const date = new Date();
 
+  const calculateDays = () => {
+    setDays(item.requireChange * 30.4);
+  };
+
   const handleAddService = () => {
     try {
+      calculateDays();
+
       firestore()
         .collection('users')
         .doc(user.uid)
@@ -24,7 +31,7 @@ const ServiceComponent = ({item, navigation}) => {
           duration: item.requireChange,
           starts: firestore.Timestamp.fromDate(new Date()),
           ends: firestore.Timestamp.fromDate(
-            new Date(date.setDate(date.getDate() + 365)),
+            new Date(date.setDate(date.getDate() + days)),
           ),
         });
     } catch (error) {
