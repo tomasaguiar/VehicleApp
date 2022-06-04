@@ -6,8 +6,8 @@ import {AuthContext} from '../../routes/provider/AuthProvider';
 import {
   CaretLeft,
   CaretRight,
-  UserCircle,
   UserSwitch,
+  SignOut,
 } from 'phosphor-react-native';
 
 const Settings = ({navigation}) => {
@@ -44,7 +44,7 @@ const Settings = ({navigation}) => {
                 justifyContent: 'space-between',
               }}>
               <View>
-                <UserCircle size={35} color={'#252525'} weight="fill" />
+                <SignOut size={30} color={'#252525'} weight="fill" />
               </View>
               <View style={{marginRight: 185}}>
                 <Text style={{fontSize: 16}}>Logout</Text>
@@ -82,6 +82,9 @@ const Settings = ({navigation}) => {
             marginTop: 500,
           }}>
           <Text>UrVehicle v.0.0.1 Pre Alpha</Text>
+          <Text style={{fontSize: 12, marginTop: 2, color: '#5a5a5a'}}>
+            developed by tomás aguiar
+          </Text>
         </View>
       </View>
     </View>
